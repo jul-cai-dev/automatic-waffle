@@ -70,7 +70,7 @@
             <h2 class="text-slate-300 text-center">Software Engineer</h2>
             <div class="flex flex-row items-center justify-center space-x-1">
                 <img class="h-4 border-[1px]" src="images/fr.svg" alt="French Flag" />
-                <h4 class="text-slate-300 text-center text-xs">CET</h4>
+                <h3 class="text-slate-300 text-center text-xs">CET</h3>
             </div>
         </div>
         <div class="z-30">
