@@ -36,7 +36,8 @@
     };
 
     let particlesInit = async (main: any) => {
-        await loadFull(main);
+        if (id === 0)
+            await loadFull(main);
     };
 </script>
 
