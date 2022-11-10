@@ -3,6 +3,8 @@
 	import { identity } from "svelte/internal";
     import { loadFull } from "tsparticles";
 
+    import { initID } from "$lib/_particlesInternalStore";
+
     export let id: number = 0;
     export let limit: number = 60;
 
@@ -36,7 +38,10 @@
     };
 
     let particlesInit = async (main: any) => {
-        if (id === 0)
+        if ($initID == -1)
+            $initID = id;
+            
+        if (id === $initID)
             await loadFull(main);
     };
 </script>
