@@ -2,6 +2,8 @@
     import Job from "$lib/Job.svelte";
     import Particles from "$lib/Particles.svelte";
 
+    let availableForHire = false;
+
     let hlbSkills = {
         "primary" : ["Blockchain", "Angular", "Angular Material", "Web3", "Solidity", "AWS", "Lambda", "Go", "NodeJS"],
         "secondary" : ["Mathematics", "Typescript", "Sass", "React", "Redux", "Bootstrap", "GitHub Actions", "Semantic Release", "Cognito", "EC2"]
@@ -74,6 +76,7 @@
             </div>
         </div>
         <div class="z-30">
+            {#if availableForHire}
             <div class="flex flex-row bg-green-100 text-green-800 text-sm font-medium pl-2 rounded dark:bg-green-200 dark:text-green-900">
                 <div>
                     <span class="absolute animate-ping inline-flex mt-1 h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
@@ -81,6 +84,15 @@
                 </div>
                 <span class="pl-1.5 text-center pr-2.5">Looking for a remote job</span>
             </div>
+            {:else}
+            <div class="flex flex-row bg-red-100 text-red-800 text-sm font-medium pl-2 rounded dark:bg-red-200 dark:text-red-900">
+                <div>
+                    <span class="absolute animate-ping inline-flex mt-1 h-3 w-3 rounded-full bg-red-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full mt-1 h-3 w-3 bg-red-500"></span>
+                </div>
+                <span class="pl-1.5 text-center pr-2.5">Not available for hire</span>
+            </div>
+             {/if}
         </div>
         <a class="flex flex-row z-30" href="mailto:jul.cai.dev@gmail.com">
             <img class="h-4 mt-1.5 mr-1" src="images/envelope-icon.png" alt="Email Icon" />
