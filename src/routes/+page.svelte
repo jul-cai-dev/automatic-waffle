@@ -1,6 +1,7 @@
 <script lang="ts">
     import Job from "$lib/Job.svelte";
     import Particles from "$lib/Particles.svelte";
+	import { fix_position } from "svelte/internal";
 
     let availableForHire = false;
 
@@ -105,7 +106,13 @@
     <div class="max-w-5xl w-full space-y-20">
         <div class="flex flex-col space-y-8">
             <h2 class="text-slate-100 text-2xl">About me</h2>
-            <p class="text-slate-300">I am a french software engineer with 6 years of professional experience. I have worked in multiple different fields, such as Industrial Printing, Mail Routing, Data Analysis, and more recently, Blockchain technologies. I like taking on new challenges and working on projects with a rich tech stack. I am currently available and looking for a full-time remote job.</p>
+            <p class="text-slate-300">I am a french software engineer with 6 years of professional experience. I have worked in multiple different fields, such as Industrial Printing, Mail Routing, Data Analysis, and more recently, Blockchain technologies. I like taking on new challenges and working on projects with a rich tech stack.
+            {#if availableForHire}
+                I am currently available and looking for a full-time remote job.
+            {:else}
+                I am currently employed and not looking for a new position.
+            {/if}
+            </p>
         </div>
         <div class="flex flex-col space-y-4">
             <h2 class="text-slate-100 text-2xl mb-4">Experience</h2>
